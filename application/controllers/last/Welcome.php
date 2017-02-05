@@ -12,7 +12,7 @@ class Welcome extends Application
     public function index()
     {
         $this->data['pagebody'] = 'justone';
-        $source = $this->quotes->get('6');
+        $source = $this->quotes->get(count($this->quotes->data));
         $this->data['who'] = $source['who'];
         $this->data['what'] = $source['what'];
         $this->data['mug'] = $source['mug'];
