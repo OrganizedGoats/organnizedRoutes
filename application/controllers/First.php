@@ -28,12 +28,21 @@ class First extends Application{
         $this->render();
     } 
     
-        public function zzz() {
+    public function zzz() {
         // this is the view we want shown
         $this->data['pagebody'] = 'justone';
 
         $record = $this->quotes->get(1);
         $this->data = array_merge($this->data, $record);
         $this->render();
-    } 
+    }
+    
+    public function gimme($id) {
+        // this is the view we want shown
+        $this->data['pagebody'] = 'justone';
+
+        $record = $this->quotes->get($id);
+        $this->data = array_merge($this->data, $record);
+        $this->render();
+    }
 }
