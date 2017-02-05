@@ -57,6 +57,7 @@ $route['lock/(:any)/(:any)'] = 'welcome/shucks';
 $route['([a-zA-Z]{4})/bingo'] = 'bingo';
 $route['comp([0-9]{4})/(:any)'] = "wise/bingo";
 $route['sleep'] = 'first/zzz';
+$route['show/(:num)'] = 'first/gimme/$1';
 
 $route['dunno'] = function() {
 	$source = '../data/surprise.jpg'; // an image you provide, outside of "public"!
