@@ -39,4 +39,16 @@ class Hogwarts extends Application
         $this->data['mug'] = $source['mug'];
         $this->render();
     }
+	
+	public function random() {
+		// this is the view we want shown
+		$this->data['pagebody'] = 'justone';
+		// build the list of authors, to pass on to our view
+		$source = $this->quotes->all();
+		$authors = array ();
+		$record = $source[rand(0, count($source) - 1)];
+		$authors[] = array ('who' => $record['who'], 'mug' => $record['mug'], 'href' => $record['where'], 'what' => $record['what']);
+		$this->data['authors'] = $authors;
+		$this->render();
+	}
 }
